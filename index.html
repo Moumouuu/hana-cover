@@ -50,10 +50,6 @@
       text-size-adjust: 100%;
     }
 
-    body.modal-open {
-      overflow: hidden;
-    }
-
     img,
     svg {
       display: block;
@@ -583,7 +579,7 @@
       margin-bottom: 56px;
     }
 
-    .portfolio .section-heading {
+    .premades .section-heading {
       grid-template-columns: 1fr;
     }
 
@@ -640,18 +636,11 @@
     }
 
     .cover-card {
-      cursor: pointer;
-      outline: none;
       transition: opacity 0.35s, transform 0.45s;
     }
 
     .cover-card.is-hidden {
       display: none;
-    }
-
-    .cover-card:focus-visible {
-      outline: 2px solid var(--red);
-      outline-offset: 8px;
     }
 
     .cover-image {
@@ -662,33 +651,12 @@
       box-shadow: 0 12px 35px rgba(57, 31, 40, 0.1);
     }
 
-    .cover-image::after {
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      left: 16px;
-      display: grid;
-      height: 44px;
-      place-items: center;
-      content: "Voir le projet";
-      background: rgba(255, 250, 248, 0.92);
-      -webkit-backdrop-filter: blur(9px);
-      backdrop-filter: blur(9px);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transform: translateY(70px);
-      transition: transform 0.4s;
-    }
-
-    .cover-card:hover .cover-image::after {
-      transform: translateY(0);
-    }
-
     .cover-card-art {
       position: absolute;
       inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.7s;
     }
 
@@ -699,124 +667,19 @@
     .cover-meta {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 12px;
       padding-top: 18px;
       margin-top: 14px;
       border-top: 1px solid var(--line);
     }
 
-    .cover-meta h3 {
-      margin-bottom: 2px;
-      font-family: var(--serif);
-      font-size: 23px;
-      font-weight: 500;
-    }
-
     .cover-meta p {
       margin: 0;
       color: var(--muted);
-      font-size: 11px;
+      font-size: 12px;
+      font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-    }
-
-    .cover-meta button {
-      display: grid;
-      width: 38px;
-      height: 38px;
-      place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: transparent;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .cover-card:hover .cover-meta button {
-      color: #fff;
-      border-color: var(--red);
-      background: var(--red);
-      transform: rotate(45deg);
-    }
-
-    .art-romance {
-      color: #fff7f2;
-      background:
-        radial-gradient(circle at 52% 44%, #9e2947 0 31%, transparent 31.5%),
-        linear-gradient(145deg, #f7e1df, #e4a9b8);
-    }
-
-    .art-drama {
-      color: #65172f;
-      background:
-        linear-gradient(158deg, transparent 0 64%, #8b1f41 64%),
-        #f2d6df;
-    }
-
-    .art-fantasy {
-      color: #f8f1dd;
-      background:
-        radial-gradient(circle at 51% 30%, #dce7d2 0 18%, #142534 18.5% 33%, transparent 33.5%),
-        radial-gradient(circle at 20% 40%, #f5d76b 0 1%, transparent 1.5%),
-        radial-gradient(circle at 78% 52%, #f5d76b 0 1%, transparent 1.5%),
-        linear-gradient(145deg, #243c4c, #0d1822);
-    }
-
-    .art-thriller {
-      color: #181818;
-      background:
-        linear-gradient(90deg, transparent 49.5%, rgba(0, 0, 0, 0.2) 50%, transparent 50.5%),
-        linear-gradient(#ece9e1 49.5%, rgba(0, 0, 0, 0.2) 50%, #ece9e1 50.5%);
-    }
-
-    .art-young {
-      color: #374743;
-      background:
-        radial-gradient(circle at 73% 26%, #fff4db 0 11%, transparent 11.5%),
-        linear-gradient(#d7e3e9, #f7d7d6 58%, #42534f 58%);
-    }
-
-    .art-romantasy {
-      color: #fff1eb;
-      background:
-        radial-gradient(circle at 50% 51%, #ffd9cf 0 18%, #33234e 18.5% 36%, transparent 36.5%),
-        linear-gradient(145deg, #241b4a, #824865);
-    }
-
-    .mini-cover-copy {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 26px 18px;
-      text-align: center;
-    }
-
-    .mini-cover-copy small {
-      margin-bottom: 16px;
-      font-size: 8px;
-      font-weight: 800;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-    }
-
-    .mini-cover-copy strong {
-      font-family: var(--serif);
-      font-size: clamp(28px, 3vw, 38px);
-      font-weight: 500;
-      font-style: italic;
-      line-height: 1;
-    }
-
-    .mini-cover-copy span {
-      position: absolute;
-      bottom: 24px;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 0.22em;
     }
 
     .craft {
@@ -1479,101 +1342,6 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .cover-modal {
-      width: min(900px, calc(100vw - 36px));
-      max-height: calc(100dvh - 36px);
-      padding: 0;
-      overflow: auto;
-      border: 0;
-      color: var(--ink);
-      background: var(--paper);
-      box-shadow: 0 30px 100px rgba(20, 9, 13, 0.45);
-    }
-
-    .cover-modal::backdrop {
-      background: rgba(20, 12, 16, 0.74);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
-    }
-
-    .modal-inner {
-      display: grid;
-      min-height: 580px;
-      grid-template-columns: 0.82fr 1.18fr;
-    }
-
-    .modal-cover {
-      display: grid;
-      padding: 38px;
-      place-items: center;
-      background: var(--paper-2);
-    }
-
-    .modal-cover-art {
-      width: min(300px, 100%);
-      aspect-ratio: 256 / 400;
-      box-shadow: var(--shadow);
-    }
-
-    .modal-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 60px;
-    }
-
-    .modal-copy h2 {
-      margin-bottom: 5px;
-      font-family: var(--serif);
-      font-size: 52px;
-      font-weight: 500;
-      line-height: 1;
-    }
-
-    .modal-genre {
-      color: var(--red);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .modal-copy > p:not(.eyebrow):not(.modal-genre) {
-      margin: 20px 0 30px;
-      color: var(--muted);
-    }
-
-    .modal-detail {
-      display: flex;
-      justify-content: space-between;
-      padding: 13px 0;
-      border-top: 1px solid var(--line);
-      font-size: 11px;
-    }
-
-    .modal-detail span {
-      color: var(--muted);
-    }
-
-    .modal-copy .button {
-      margin-top: 30px;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      z-index: 2;
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: var(--paper);
-      font-size: 24px;
-      line-height: 1;
-      cursor: pointer;
-    }
-
     @media (max-width: 1050px) {
       :root {
         --shell: min(100% - 40px, 920px);
@@ -1830,13 +1598,6 @@
         width: 100%;
       }
 
-      .modal-inner {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .modal-copy {
-        padding: 42px 32px;
-      }
     }
 
     @media (max-width: 560px) {
@@ -2000,30 +1761,6 @@
         padding-right: 0;
       }
 
-      .cover-modal {
-        width: calc(100vw - 18px);
-        max-height: calc(100dvh - 18px);
-      }
-
-      .modal-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .modal-cover {
-        padding: 28px;
-      }
-
-      .modal-cover-art {
-        width: min(230px, 70vw);
-      }
-
-      .modal-copy {
-        padding: 34px 24px;
-      }
-
-      .modal-copy h2 {
-        font-size: 40px;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -2067,7 +1804,7 @@
       </a>
 
       <div class="nav-links">
-        <a href="#portfolio">Portfolio</a>
+        <a href="#premades">Premades</a>
         <a href="#methode">Méthode</a>
         <a href="#offres">Offres</a>
         <a href="#faq">FAQ</a>
@@ -2081,7 +1818,7 @@
         <a class="menu-close" href="#!" aria-label="Fermer le menu">×</a>
 
         <div class="mobile-menu-links">
-          <a href="#portfolio">Portfolio</a>
+          <a href="#premades">Premades</a>
           <a href="#methode">Méthode</a>
           <a href="#offres">Offres</a>
           <a href="#faq">FAQ</a>
@@ -2113,8 +1850,8 @@
         </p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="#portfolio">
-            <span>Voir les covers</span>
+          <a class="button button-primary" href="#premades">
+            <span>Voir les premades</span>
             <i aria-hidden="true">↘</i>
           </a>
 
@@ -2181,182 +1918,130 @@
       </div>
     </section>
 
-    <section class="portfolio section shell" id="portfolio">
+    <section class="premades section shell" id="premades">
       <div class="section-heading">
         <div>
-          <p class="eyebrow"><span></span> Portfolio</p>
-          <h2>Une collection <em>d’univers.</em></h2>
+          <p class="eyebrow"><span></span> Premades</p>
+          <h2>Des covers <em>prêtes à adopter.</em></h2>
         </div>
       </div>
 
       <div class="filter-bar" role="group" aria-label="Filtrer les couvertures">
         <button class="filter-button is-active" type="button" data-filter="all">Toutes</button>
-        <button class="filter-button" type="button" data-filter="romance">Romance</button>
-        <button class="filter-button" type="button" data-filter="fantasy">Fantasy</button>
-        <button class="filter-button" type="button" data-filter="thriller">Thriller</button>
+        <button class="filter-button" type="button" data-filter="dark-romance">Dark romance</button>
+        <button class="filter-button" type="button" data-filter="romance-psychologique">Romance psychologique</button>
+        <button class="filter-button" type="button" data-filter="romance-contemporaine">Romance contemporaine</button>
+        <button class="filter-button" type="button" data-filter="new-romance">New romance</button>
+        <button class="filter-button" type="button" data-filter="romantasy">Romantasy</button>
         <button class="filter-button" type="button" data-filter="drama">Drama</button>
       </div>
 
       <div class="cover-grid">
-        <article
-          class="cover-card"
-          data-category="romance"
-          data-title="Minuit à Kyoto"
-          data-genre="Romance contemporaine"
-          data-description="Une direction sensible, cinématographique et immédiatement lisible en miniature."
-          data-art="art-romance"
-          tabindex="0"
-        >
+        <article class="cover-card" data-category="dark-romance">
           <div class="cover-image">
-            <div class="cover-card-art art-romance">
-              <div class="mini-cover-copy">
-                <small>Roman</small>
-                <strong>Minuit<br />à Kyoto</strong>
-                <span>LENA MORI</span>
-              </div>
-            </div>
+            <img class="cover-card-art" src="assets/premades/beautiful-disaster.webp" alt="Cover premade Beautiful Disaster" loading="lazy" />
           </div>
           <div class="cover-meta">
-            <div>
-              <h3>Minuit à Kyoto</h3>
-              <p>Romance</p>
-            </div>
-            <button type="button" aria-label="Voir Minuit à Kyoto">↗</button>
+            <p>Dark romance</p>
           </div>
         </article>
 
-        <article
-          class="cover-card"
-          data-category="drama romance"
-          data-title="Nos silences"
-          data-genre="Romance dramatique"
-          data-description="Une cover éditoriale où le vide, la couleur et la typographie racontent la distance."
-          data-art="art-drama"
-          tabindex="0"
-        >
+        <article class="cover-card" data-category="dark-romance">
           <div class="cover-image">
-            <div class="cover-card-art art-drama">
-              <div class="mini-cover-copy">
-                <small>Une histoire de</small>
-                <strong>Nos<br />silences</strong>
-                <span>NOA VALLÉE</span>
-              </div>
-            </div>
+            <img class="cover-card-art" src="assets/premades/blooming-hearts.webp" alt="Cover premade Blooming Hearts" loading="lazy" />
           </div>
           <div class="cover-meta">
-            <div>
-              <h3>Nos silences</h3>
-              <p>Drama · Romance</p>
-            </div>
-            <button type="button" aria-label="Voir Nos silences">↗</button>
+            <p>Dark romance</p>
           </div>
         </article>
 
-        <article
-          class="cover-card"
-          data-category="fantasy"
-          data-title="La fille aux lucioles"
-          data-genre="Fantasy urbaine"
-          data-description="Une ambiance nocturne mystérieuse, structurée pour rester forte sur mobile."
-          data-art="art-fantasy"
-          tabindex="0"
-        >
+        <article class="cover-card" data-category="romance-psychologique">
           <div class="cover-image">
-            <div class="cover-card-art art-fantasy">
-              <div class="mini-cover-copy">
-                <small>Fantasy urbaine</small>
-                <strong>La fille aux<br />lucioles</strong>
-                <span>ELI SORA</span>
-              </div>
-            </div>
+            <img class="cover-card-art" src="assets/premades/unsettled.webp" alt="Cover premade Unsettled" loading="lazy" />
           </div>
           <div class="cover-meta">
-            <div>
-              <h3>La fille aux lucioles</h3>
-              <p>Fantasy</p>
-            </div>
-            <button type="button" aria-label="Voir La fille aux lucioles">↗</button>
+            <p>Romance psychologique</p>
           </div>
         </article>
 
-        <article
-          class="cover-card"
-          data-category="thriller"
-          data-title="L’Appartement 17"
-          data-genre="Thriller psychologique"
-          data-description="Contrastes francs, indice visuel troublant et titre conçu pour intriguer en une seconde."
-          data-art="art-thriller"
-          tabindex="0"
-        >
+        <article class="cover-card" data-category="romance-psychologique">
           <div class="cover-image">
-            <div class="cover-card-art art-thriller">
-              <div class="mini-cover-copy">
-                <small>Personne ne l’a vu entrer</small>
-                <strong>L’Appartement<br />17</strong>
-                <span>JUNE ARDEN</span>
-              </div>
-            </div>
+            <img class="cover-card-art" src="assets/premades/swan.webp" alt="Cover premade Swan" loading="lazy" />
           </div>
           <div class="cover-meta">
-            <div>
-              <h3>L’Appartement 17</h3>
-              <p>Thriller</p>
-            </div>
-            <button type="button" aria-label="Voir L’Appartement 17">↗</button>
+            <p>Romance psychologique</p>
           </div>
         </article>
 
-        <article
-          class="cover-card"
-          data-category="romance drama"
-          data-title="Après l’orage"
-          data-genre="Young adult"
-          data-description="Une composition douce et lumineuse qui promet une reconstruction sans dévoiler l’histoire."
-          data-art="art-young"
-          tabindex="0"
-        >
+        <article class="cover-card" data-category="romance-contemporaine drama">
           <div class="cover-image">
-            <div class="cover-card-art art-young">
-              <div class="mini-cover-copy">
-                <small>Après la pluie</small>
-                <strong>Après<br />l’orage</strong>
-                <span>MAYA LUNE</span>
-              </div>
-            </div>
+            <img class="cover-card-art" src="assets/premades/a-heart-made-of-ice.webp" alt="Cover premade A Heart Made of Ice" loading="lazy" />
           </div>
           <div class="cover-meta">
-            <div>
-              <h3>Après l’orage</h3>
-              <p>Young adult</p>
-            </div>
-            <button type="button" aria-label="Voir Après l’orage">↗</button>
+            <p>Romance contemporaine · Dramatique</p>
           </div>
         </article>
 
-        <article
-          class="cover-card"
-          data-category="fantasy romance"
-          data-title="Le ciel entre nous"
-          data-genre="Romantasy"
-          data-description="Une identité céleste et romantique, pensée comme le début visuel d’une saga."
-          data-art="art-romantasy"
-          tabindex="0"
-        >
+        <article class="cover-card" data-category="romantasy">
           <div class="cover-image">
-            <div class="cover-card-art art-romantasy">
-              <div class="mini-cover-copy">
-                <small>Une romantasy</small>
-                <strong>Le ciel<br />entre nous</strong>
-                <span>LIO ASTER</span>
-              </div>
-            </div>
+            <img class="cover-card-art" src="assets/premades/the-kings-final-choice.webp" alt="Cover premade The King’s Final Choice" loading="lazy" />
           </div>
           <div class="cover-meta">
-            <div>
-              <h3>Le ciel entre nous</h3>
-              <p>Romantasy</p>
-            </div>
-            <button type="button" aria-label="Voir Le ciel entre nous">↗</button>
+            <p>Romantasy</p>
+          </div>
+        </article>
+
+        <article class="cover-card" data-category="new-romance">
+          <div class="cover-image">
+            <img class="cover-card-art" src="assets/premades/whispers-of-blue-feathers.webp" alt="Cover premade Whispers of Blue Feathers" loading="lazy" />
+          </div>
+          <div class="cover-meta">
+            <p>New romance</p>
+          </div>
+        </article>
+
+        <article class="cover-card" data-category="romantasy">
+          <div class="cover-image">
+            <img class="cover-card-art" src="assets/premades/garden-of-everlight.webp" alt="Cover premade Garden of Everlight" loading="lazy" />
+          </div>
+          <div class="cover-meta">
+            <p>Romantasy</p>
+          </div>
+        </article>
+
+        <article class="cover-card" data-category="romantasy">
+          <div class="cover-image">
+            <img class="cover-card-art" src="assets/premades/the-swans-secret.webp" alt="Cover premade The Swan’s Secret" loading="lazy" />
+          </div>
+          <div class="cover-meta">
+            <p>Romantasy</p>
+          </div>
+        </article>
+
+        <article class="cover-card" data-category="romance-contemporaine">
+          <div class="cover-image">
+            <img class="cover-card-art" src="assets/premades/the-song-we-never-finished.webp" alt="Cover premade The Song We Never Finished" loading="lazy" />
+          </div>
+          <div class="cover-meta">
+            <p>Romance contemporaine</p>
+          </div>
+        </article>
+
+        <article class="cover-card" data-category="new-romance">
+          <div class="cover-image">
+            <img class="cover-card-art" src="assets/premades/love-written-in-moonlight.webp" alt="Cover premade Love Written in Moonlight" loading="lazy" />
+          </div>
+          <div class="cover-meta">
+            <p>New romance</p>
+          </div>
+        </article>
+
+        <article class="cover-card" data-category="romance-contemporaine drama">
+          <div class="cover-image">
+            <img class="cover-card-art" src="assets/premades/promets-moi-demain.webp" alt="Cover premade Promets-moi demain" loading="lazy" />
+          </div>
+          <div class="cover-meta">
+            <p>Romance contemporaine · Drama</p>
           </div>
         </article>
       </div>
@@ -2718,8 +2403,11 @@
 
           <div class="contact-direct">
             <a href="mailto:averyhollow4@gmail.com">averyhollow4@gmail.com</a>
-            <a href="https://instagram.com/hanacovers" target="_blank" rel="noreferrer">
-              @hanacovers
+            <a href="https://www.instagram.com/avery.yhollow/" target="_blank" rel="noreferrer">
+              Instagram · @avery.yhollow
+            </a>
+            <a href="https://www.tiktok.com/@avery_hollow" target="_blank" rel="noreferrer">
+              TikTok · @avery_hollow
             </a>
           </div>
 
@@ -2747,11 +2435,11 @@
               Genre de l’histoire
               <select name="genre" required>
                 <option value="" selected disabled>Choisir un genre</option>
-                <option>Romance</option>
                 <option>Dark romance</option>
-                <option>Fantasy / Romantasy</option>
-                <option>Thriller</option>
-                <option>Young adult</option>
+                <option>Romance psychologique</option>
+                <option>Romance contemporaine / Drama</option>
+                <option>New romance</option>
+                <option>Romantasy</option>
                 <option>Autre</option>
               </select>
             </label>
@@ -2805,9 +2493,11 @@
       <p>Des covers faites avec du temps, du goût et beaucoup trop de playlists.</p>
 
       <div class="footer-links">
-        <a href="#portfolio">Portfolio</a>
+        <a href="#premades">Premades</a>
         <a href="#offres">Tarifs</a>
         <a href="#contact">Contact</a>
+        <a href="https://www.instagram.com/avery.yhollow/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@avery_hollow" target="_blank" rel="noreferrer">TikTok</a>
       </div>
 
       <p class="copyright">
@@ -2816,45 +2506,11 @@
     </div>
   </footer>
 
-  <dialog class="cover-modal" data-cover-modal>
-    <button class="modal-close" type="button" aria-label="Fermer" data-modal-close>×</button>
-
-    <div class="modal-inner">
-      <div class="modal-cover">
-        <div class="modal-cover-art" data-modal-art></div>
-      </div>
-
-      <div class="modal-copy">
-        <p class="eyebrow"><span></span> Étude de cover</p>
-        <h2 data-modal-title></h2>
-        <p class="modal-genre" data-modal-genre></p>
-        <p data-modal-description></p>
-
-        <div class="modal-detail">
-          <span>Format</span>
-          <strong>Wattpad + HD</strong>
-        </div>
-
-        <div class="modal-detail">
-          <span>Création</span>
-          <strong>Composition manuelle</strong>
-        </div>
-
-        <a class="button button-primary" href="#contact" data-modal-contact>
-          <span>Créer mon univers</span>
-          <i aria-hidden="true">↗</i>
-        </a>
-      </div>
-    </div>
-  </dialog>
-
   <script>
     (() => {
       "use strict";
 
       const header = document.querySelector("[data-header]");
-      const modal = document.querySelector("[data-cover-modal]");
-      const modalArt = document.querySelector("[data-modal-art]");
       const cards = document.querySelectorAll(".cover-card");
       const filters = document.querySelectorAll("[data-filter]");
       const contactForm = document.querySelector("[data-contact-form]");
@@ -2881,45 +2537,6 @@
             card.classList.toggle("is-hidden", !matches);
           });
         });
-      });
-
-      const openModal = (card) => {
-        if (!modal) return;
-
-        modal.querySelector("[data-modal-title]").textContent = card.dataset.title;
-        modal.querySelector("[data-modal-genre]").textContent = card.dataset.genre;
-        modal.querySelector("[data-modal-description]").textContent = card.dataset.description;
-
-        modalArt.className = `modal-cover-art ${card.dataset.art}`;
-        modal.showModal();
-        document.body.classList.add("modal-open");
-      };
-
-      cards.forEach((card) => {
-        card.addEventListener("click", () => openModal(card));
-
-        card.addEventListener("keydown", (event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            openModal(card);
-          }
-        });
-      });
-
-      const closeModal = () => {
-        modal.close();
-        document.body.classList.remove("modal-open");
-      };
-
-      modal.querySelector("[data-modal-close]").addEventListener("click", closeModal);
-      modal.querySelector("[data-modal-contact]").addEventListener("click", closeModal);
-
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) closeModal();
-      });
-
-      modal.addEventListener("close", () => {
-        document.body.classList.remove("modal-open");
       });
 
       contactForm.addEventListener("submit", (event) => {
